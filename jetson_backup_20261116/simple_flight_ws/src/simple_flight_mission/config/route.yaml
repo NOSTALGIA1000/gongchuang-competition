@@ -1,0 +1,25 @@
+# 每个点均相对本次起飞点，按 SWA 拨高时机头方向解释；不是相对上一点累加。
+# 前方为正 forward_m，左侧为正 left_m；全程保持初始机头方向。
+# 改距离、增加航点只修改 points。启动时读取一次，飞行中修改不生效。
+height_m: 1.0
+climb_mps: 0.2
+horizontal_mps: 0.2
+# 下降速度读飞控 MPC_LAND_SPEED / MPC_LAND_CRWL，近地门槛读 MPC_LAND_ALT3。
+# 不在这里填写固定下降速度，也不修改飞控的落地识别参数。
+descent_source: fcu
+origin_hold_s: 3.0
+return_hold_s: 2.0
+points:
+  - forward_m: 1.0
+    left_m: 0.0
+    hold_s: 3.0
+
+# 通常保留以下项；未到点/未稳定不开始悬停计时。
+arrival_xy_m: 0.15
+arrival_z_m: 0.10
+arrival_speed_mps: 0.10
+arrival_stable_s: 1.0
+path_margin_m: 0.40
+target_lead_m: 0.25
+transit_timeout_extra_s: 10.0
+landing_timeout_extra_s: 10.0

@@ -1,0 +1,27 @@
+# 路径1：航点0起飞；航点3、5为任务区；其余航点为避障通道。
+# 所有坐标均相对起飞点，按起飞时机头方向解释；前方为正，左侧为正。
+# 航点4与航点2默认重合；校准后分别读取4.2、2.2，返航分别经过。
+height_m: 0.5
+climb_mps: 0.2
+horizontal_mps: 0.3
+descent_source: fcu
+origin_hold_s: 3.0
+return_hold_s: 3.0
+mission_timeout_s: 300.0
+# 返航时中间航点作为连续过点航标，不做停留；return_hold_s 只用于起飞点。
+return_indices: [3, 1, 0]
+point_names: ['1.2', '2.2', '3', '4.2', '5.2']
+search_point_name: '5.1'
+points:
+  - {forward_m: 2.2, left_m: 0.0, hold_s: 0.1, stage: obstacle_1}
+  - {forward_m: 2.2, left_m: 1.4, hold_s: 0.1, stage: obstacle_2}
+  - {forward_m: 0.0, left_m: 1.4, hold_s: 3.0, stage: task_zone_1}
+  - {forward_m: 2.2, left_m: 1.4, hold_s: 0.1, stage: obstacle_3}
+  - {forward_m: 2.2, left_m: 2.7, hold_s: 3.0, stage: task_zone_2}
+
+arrival_xy_m: 0.15
+arrival_z_m: 0.10
+arrival_speed_mps: 0.10
+arrival_stable_s: 1.0
+path_margin_m: 0.40
+target_lead_m: 0.25
