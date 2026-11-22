@@ -1,0 +1,27 @@
+# Path 3: coordinates are absolute offsets from the takeoff origin in the
+# locked initial heading frame; forward is positive and left is positive.
+height_m: 0.5
+climb_mps: 0.2
+horizontal_mps: 0.3
+descent_source: fcu
+origin_hold_s: 3.0
+return_hold_s: 3.0
+mission_timeout_s: 300.0
+
+# Return sequence is waypoint 5 -> 4 -> 2 -> 1 -> 0.
+return_indices: [3, 1, 0]
+point_names: ['1.1', '2.1', '3', '4.2', '5.2']
+search_point_name: '5.1'
+points:
+  - {forward_m: 1.7, left_m: 0.0, hold_s: 0.1, stage: obstacle_1}
+  - {forward_m: 1.7, left_m: 1.4, hold_s: 0.1, stage: obstacle_2}
+  - {forward_m: 0.0, left_m: 1.4, hold_s: 3.0, stage: task_zone_1}
+  - {forward_m: 2.2, left_m: 1.4, hold_s: 0.1, stage: obstacle_3}
+  - {forward_m: 2.2, left_m: 2.7, hold_s: 3.0, stage: task_zone_2}
+
+arrival_xy_m: 0.15
+arrival_z_m: 0.10
+arrival_speed_mps: 0.10
+arrival_stable_s: 1.0
+path_margin_m: 0.40
+target_lead_m: 0.25

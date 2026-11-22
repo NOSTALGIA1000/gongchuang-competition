@@ -1,0 +1,20 @@
+/**:
+  ros__parameters:
+    startup_px4_usb_quirk: false
+/**/time:
+  ros__parameters:
+    time_ref_source: fcu
+    timesync_mode: MAVLINK
+    timesync_avg_alpha: 0.6
+    timesync_rate: 10.0
+    system_time_rate: 0.0
+/**/imu:
+  ros__parameters:
+    frame_id: base_link
+/**/local_position:
+  ros__parameters:
+    frame_id: odom
+    tf.send: false
+/**/vision_pose:
+  ros__parameters:
+    tf.listen: false

@@ -1,0 +1,17 @@
+simple_vision_bridge:
+  ros__parameters:
+    # Default remains bench. The separate position aiding entry overrides this.
+    operation_mode: bench
+    input_topic: /Odometry
+    output_topic: /mavros/vision_pose/pose_cov
+    state_topic: /mavros/state
+    imu_topic: /mavros/imu/data
+    source_frame: camera_init
+    source_child_frame: body
+    # User supplied approximate mounting relation; not a calibrated IMU lever arm.
+    # Forward/left/up vector: FCU reference -> approximate LIO sensor origin.
+    sensor_in_body: [0.0, 0.0, 0.05]
+    max_age_s: 0.3
+    max_gap_s: 1.0
+    position_sigma_m: 0.1
+    angle_sigma_rad: 0.1

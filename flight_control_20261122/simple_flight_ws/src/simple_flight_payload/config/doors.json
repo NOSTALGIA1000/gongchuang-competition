@@ -1,0 +1,8 @@
+{
+  "doors": {
+    "1": {"min_us": 1000, "max_us": 2000, "open_us": null, "close_us": null,
+          "angle_min_deg": 0, "angle_max_deg": 180, "open_deg": 10, "close_deg": 170},
+    "2": {"min_us": 1000, "max_us": 2000, "open_us": null, "close_us": null,
+          "angle_min_deg": 0, "angle_max_deg": 180, "open_deg": 10, "close_deg": 170}
+  }
+}

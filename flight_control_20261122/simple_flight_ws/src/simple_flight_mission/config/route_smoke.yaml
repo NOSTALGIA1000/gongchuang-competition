@@ -1,0 +1,19 @@
+# 空载短飞：起飞点0 → 点1.2（默认前方2.20m）→ 返航回0。无任务区、不触发视觉投放。
+height_m: 1.0
+climb_mps: 0.2
+horizontal_mps: 0.3
+descent_source: fcu
+origin_hold_s: 3.0
+return_hold_s: 3.0
+mission_timeout_s: 120.0
+return_indices: []
+point_names: ['1.2']
+points:
+  - {forward_m: 2.2, left_m: 0.0, hold_s: 2.0, stage: smoke_out}
+
+arrival_xy_m: 0.15
+arrival_z_m: 0.10
+arrival_speed_mps: 0.10
+arrival_stable_s: 1.0
+path_margin_m: 0.40
+target_lead_m: 0.25
